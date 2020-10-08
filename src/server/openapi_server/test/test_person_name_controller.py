@@ -20,12 +20,12 @@ class TestPersonNameController(BaseTestCase):
         Get all person name annotations
         """
         note = {
-  "filename" : "260-01.xml",
-  "text" : "October 3, Ms Chloe Price met with...",
-  "type" : "pathology",
-  "patientPublicId" : ""
-}
-        headers = { 
+            "filename": "260-01.xml",
+            "text": "October 3, Ms Chloe Price met with...",
+            "type": "pathology",
+            "patientPublicId": ""
+        }
+        headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
         }

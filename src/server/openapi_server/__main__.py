@@ -38,7 +38,7 @@ def main():
                 note_id = obj.note_id
                 start = obj.start
                 return {'id': obj.id, 'note_id': note_id, 'createdBy': obj.created_by, 'text': text,
-                         'created_at': created_date_str, "start": start}
+                        'created_at': created_date_str, "start": start}
 
             return json.JSONEncoder.default(self,
                                             obj)  # default, if not Delivery object. Caller's problem if this is not serialziable.

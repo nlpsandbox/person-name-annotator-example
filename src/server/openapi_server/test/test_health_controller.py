@@ -18,7 +18,7 @@ class TestHealthController(BaseTestCase):
 
         Get Health
         """
-        headers = { 
+        headers = {
             'Accept': 'application/json',
         }
         response = self.client.open(

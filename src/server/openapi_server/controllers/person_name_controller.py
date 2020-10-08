@@ -41,7 +41,7 @@ def person_names_read_all(note=None):  # noqa: E501
                 if entity.label_ == 'PERSON':
                     logging.info(f"{entity.text}  {entity.start_char} ")
                     return_list = add_match(counter, entity, note, return_list, note_id)
-                    counter +=1
+                    counter += 1
                     # logging.info(f"PRETTY : { pprint(return_list)}")
 
         for m in return_list:
@@ -54,7 +54,7 @@ def add_match(counter, entity, note, returnList, note_id):
     if entity is not None:
         logging.info(f"Entity : {entity.text} found at {entity.start_char} ")
         da = PersonNameAnnotation(id=counter, created_by="Person Data Annotation Example",
-                                  created_at=date.today() )
+                                  created_at=date.today())
         # Set on Parent Class
         da.note_id = note_id
         da.text = entity.text

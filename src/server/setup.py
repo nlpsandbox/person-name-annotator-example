@@ -36,4 +36,3 @@ setup(
     The OpenAPI specification implemented by NLP Sandbox Person Name Annotators. # Overview This NLP tool detects references of person names in the clinical notes given as input and returns a list of person name annotations. 
     """
 )
-

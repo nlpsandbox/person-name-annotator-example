@@ -15,13 +15,13 @@ info:
   x-logo:
     url: https://data2health.github.io/nlp-sandbox-schemas/logo.png
 servers:
-- url: http://example.com/api/v1
-- url: https://example.com/api/v1
+  - url: http://example.com/api/v1
+  - url: https://example.com/api/v1
 tags:
-- description: Operations about person names
-  name: Person Name
-- description: Operations about API health
-  name: Health
+  - description: Operations about person names
+    name: Person Name
+  - description: Operations about API health
+    name: Health
 paths:
   /health:
     get:
@@ -40,7 +40,7 @@ paths:
           description: Note not found
       summary: Get Health
       tags:
-      - Health
+        - Health
       x-openapi-router-controller: openapi_server.controllers.health_controller
   /person-names:
     post:
@@ -66,7 +66,7 @@ paths:
           description: Forbidden
       summary: Get all person name annotations
       tags:
-      - Person Name
+        - Person Name
       x-openapi-router-controller: openapi_server.controllers.person_name_controller
 components:
   schemas:
@@ -93,10 +93,10 @@ components:
           format: test
           type: string
       required:
-      - email
-      - firstName
-      - lastName
-      - username
+        - email
+        - firstName
+        - lastName
+        - username
       type: object
     Entity:
       properties:
@@ -116,7 +116,7 @@ components:
           format: date-time
           type: string
       required:
-      - id
+        - id
       type: object
     PatientPublicId:
       description: The patient public ID
@@ -125,7 +125,7 @@ components:
       type: string
     Note:
       allOf:
-      - $ref: '#/components/schemas/Entity'
+        - $ref: '#/components/schemas/Entity'
       description: A clinical note
       example:
         id: 1
@@ -140,7 +140,7 @@ components:
           type: string
         patientPublicId:
           allOf:
-          - $ref: '#/components/schemas/PatientPublicId'
+            - $ref: '#/components/schemas/PatientPublicId'
         filename:
           description: The filename of the source note
           example: 260-01.xml
@@ -148,15 +148,15 @@ components:
         type:
           description: The note type
           enum:
-          - pathology
-          - phone_call
+            - pathology
+            - phone_call
           type: string
       required:
-      - text
+        - text
       type: object
     Annotation:
       allOf:
-      - $ref: '#/components/schemas/Entity'
+        - $ref: '#/components/schemas/Entity'
       description: An annotation in a text
       properties:
         noteId:
@@ -172,13 +172,13 @@ components:
           description: The string annotated
           type: string
       required:
-      - length
-      - noteId
-      - start
+        - length
+        - noteId
+        - start
       type: object
     PersonNameAnnotation:
       allOf:
-      - $ref: '#/components/schemas/Annotation'
+        - $ref: '#/components/schemas/Annotation'
       description: A person name annotation in a text
       type: object
     Health:
@@ -188,7 +188,7 @@ components:
         status:
           description: Health status
           enum:
-          - pass
-          - warn
+            - pass
+            - warn
           type: string
       type: object
