@@ -3,7 +3,7 @@ import pprint
 import six
 import typing
 
-from openapi_server import util
+from openapi_server import utility
 
 T = typing.TypeVar('T')
 
@@ -20,7 +20,7 @@ class Model(object):
     @classmethod
     def from_dict(cls: typing.Type[T], dikt) -> T:
         """Returns the dict as a model"""
-        return util.deserialize_model(dikt, cls)
+        return utility.deserialize_model(dikt, cls)
 
     def to_dict(self):
         """Returns the model properties as a dict

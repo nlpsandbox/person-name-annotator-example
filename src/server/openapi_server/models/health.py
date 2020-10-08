@@ -6,7 +6,7 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from openapi_server.models.base_model_ import Model
-from openapi_server import util
+from openapi_server import utility
 
 
 class Health(Model):
@@ -40,7 +40,7 @@ class Health(Model):
         :return: The Health of this Health.  # noqa: E501
         :rtype: Health
         """
-        return util.deserialize_model(dikt, cls)
+        return utility.deserialize_model(dikt, cls)
 
     @property
     def status(self):

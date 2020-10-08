@@ -17,7 +17,7 @@ TBA
 ## Deploy using Docker
 
 
-1. Start the Data Node web service (RESP API)
+1. Start the Person Name Annotation Node web service (RESP API) with the command :
 
         docker-compose up
 
@@ -29,7 +29,7 @@ TBA
 
 The current logs are saved to `/var/log/app/current`.
 
-    $ docker exec data-node-api cat /var/log/app/current
+    $ docker exec person-name-annotator cat /var/log/app/current
     2020-09-25 23:33:39.809826500  Starting data node server
     2020-09-25 23:33:40.436453500   * Serving Flask app "__main__" (lazy loading)
     2020-09-25 23:33:40.436461500   * Environment: production
@@ -39,7 +39,7 @@ The current logs are saved to `/var/log/app/current`.
 
 Follow the logs using `docker logs`
 
-    docker logs --follow data-node-api
+    docker logs --follow person-name-annotator
 
 <!-- ## Deploy using Python (for development)
 

@@ -7,7 +7,7 @@ from typing import List, Dict  # noqa: F401
 
 from openapi_server.models.base_model_ import Model
 from openapi_server.models.user import User
-from openapi_server import util
+from openapi_server import utility
 
 from openapi_server.models.user import User  # noqa: E501
 
@@ -62,7 +62,7 @@ class Entity(Model):
         :return: The Entity of this Entity.  # noqa: E501
         :rtype: Entity
         """
-        return util.deserialize_model(dikt, cls)
+        return utility.deserialize_model(dikt, cls)
 
     @property
     def id(self):

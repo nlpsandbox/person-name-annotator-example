@@ -15,6 +15,7 @@ To run the server, please execute the following from the root directory:
 
 ```
 pip3 install -r requirements.txt
+python3 -m spacy download en_core_web_md
 python3 -m openapi_server
 ```
 
@@ -48,8 +49,9 @@ To run the server on a Docker container, please execute the following from the r
 
 ```bash
 # building the image
-docker build -t openapi_server .
+docker_compose  build  
 
 # starting up a container
-dB
+docker_compose up
+
 ```

@@ -43,7 +43,7 @@ paths:
       - Health
       x-openapi-router-controller: openapi_server.controllers.health_controller
   /person-names:
-    get:
+    post:
       description: Returns the person name annotations
       operationId: person_names_read_all
       requestBody:
@@ -128,10 +128,11 @@ components:
       - $ref: '#/components/schemas/Entity'
       description: A clinical note
       example:
+        id: 1
         filename: 260-01.xml
         text: October 3, Ms Chloe Price met with...
         type: pathology
-        patientPublicId: ""
+        patientPublicId: "123-1223-12232"
       properties:
         text:
           description: The content of the note
@@ -140,7 +141,6 @@ components:
         patientPublicId:
           allOf:
           - $ref: '#/components/schemas/PatientPublicId'
-          readOnly: true
         filename:
           description: The filename of the source note
           example: 260-01.xml

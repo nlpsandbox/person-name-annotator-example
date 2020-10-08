@@ -20,6 +20,8 @@ class Annotation(Model):
     """
 
     def __init__(self, note_id=None, start=None, length=None, text=None, id=None, created_by=None, created_at=None, updated_by=None, updated_at=None):  # noqa: E501
+
+
         """Annotation - a model defined in OpenAPI
 
         :param note_id: The note_id of this Annotation.  # noqa: E501
@@ -43,7 +45,7 @@ class Annotation(Model):
         """
         self.openapi_types = {
             'note_id': int,
-            'start': int,
+            '': int,
             'length': int,
             'text': str,
             'id': int,
