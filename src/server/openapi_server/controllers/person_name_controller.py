@@ -12,7 +12,6 @@ from openapi_server.models.person_name_annotation import \
     PersonNameAnnotation  # noqa: E501
 from openapi_server.utility.configuration import Config
 
-
 def person_names_read_all(note=None):  # noqa: E501
     """Get all person name annotations
 
@@ -52,7 +51,6 @@ def person_names_read_all(note=None):  # noqa: E501
             logging.info(f" text set to : {m.text}")
 
     return return_list
-
 
 def add_match(counter, entity, note, returnList, note_id):
     if entity is not None:

@@ -9,7 +9,6 @@ from openapi_server.utility.configuration import Config
 from logging.config import dictConfig
 from openapi_server import encoder
 
-
 def main():
     # Set up logging
     dictConfig({
@@ -55,7 +54,6 @@ def main():
 
     Config.nlp
     app.run(port=8080)
-
 
 if __name__ == '__main__':
     main()

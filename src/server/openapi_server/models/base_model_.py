@@ -7,7 +7,6 @@ from openapi_server import utility
 
 T = typing.TypeVar('T')
 
-
 class Model(object):
     # openapiTypes: The key is attribute name and the
     # value is attribute type.

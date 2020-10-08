@@ -4,7 +4,6 @@ import six
 import typing
 from openapi_server import typing_utils
 
-
 def _deserialize(data, klass):
     """Deserializes dict, list, str into an object.
 
@@ -32,7 +31,6 @@ def _deserialize(data, klass):
     else:
         return deserialize_model(data, klass)
 
-
 def _deserialize_primitive(data, klass):
     """Deserializes to primitive type.
 
@@ -50,14 +48,12 @@ def _deserialize_primitive(data, klass):
         value = data
     return value
 
-
 def _deserialize_object(value):
     """Return an original value.
 
     :return: object.
     """
     return value
-
 
 def deserialize_date(string):
     """Deserializes string to date.
@@ -72,7 +68,6 @@ def deserialize_date(string):
         return parse(string).date()
     except ImportError:
         return string
-
 
 def deserialize_datetime(string):
     """Deserializes string to datetime.
@@ -89,7 +84,6 @@ def deserialize_datetime(string):
         return parse(string)
     except ImportError:
         return string
-
 
 def deserialize_model(data, klass):
     """Deserializes list or dict to model.
@@ -113,7 +107,6 @@ def deserialize_model(data, klass):
 
     return instance
 
-
 def _deserialize_list(data, boxed_type):
     """Deserializes a list and its elements.
 
@@ -126,7 +119,6 @@ def _deserialize_list(data, boxed_type):
     """
     return [_deserialize(sub_data, boxed_type)
             for sub_data in data]
-
 
 def _deserialize_dict(data, boxed_type):
     """Deserializes a dict and its elements.

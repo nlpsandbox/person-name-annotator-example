@@ -4,7 +4,6 @@ import six
 from openapi_server.models.health import Health  # noqa: E501
 from openapi_server import utility
 
-
 def health():  # noqa: E501
     """Get Health
 
