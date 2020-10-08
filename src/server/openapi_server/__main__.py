@@ -34,7 +34,7 @@ def main():
     class PersonNameEncoder(json.JSONEncoder):
         def default(self, obj):
             if isinstance(obj, PersonNameAnnotation):
-                text = obj.text;  # From Parent Class, out of the box
+                text = obj.text  # From Parent Class, out of the box
                 # connexion only returns fields on the child class
                 created_date_str = obj.created_at.strftime("%y%m%d")
                 note_id = obj.note_id
