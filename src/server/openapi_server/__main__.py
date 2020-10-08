@@ -28,20 +28,24 @@ def main():
         }
     })
 
-    # Needed to Encode PersonNameEncoder classes as without it, the returned array would not incllude the
+    # Needed to Encode PersonNameEncoder classes as without it, the returned
+    # array would not incllude the
     # Parent fields
     class PersonNameEncoder(json.JSONEncoder):
         def default(self, obj):
             if isinstance(obj, PersonNameAnnotation):
-                text = obj.text;  # From Parent Class, out of the box connexion only returns fields on the child class
+                text = obj.text;  # From Parent Class, out of the box
+                # connexion only returns fields on the child class
                 created_date_str = obj.created_at.strftime("%y%m%d")
                 note_id = obj.note_id
                 start = obj.start
-                return {'id': obj.id, 'note_id': note_id, 'createdBy': obj.created_by, 'text': text,
+                return {'id': obj.id, 'note_id': note_id,
+                        'createdBy': obj.created_by, 'text': text,
                         'created_at': created_date_str, "start": start}
 
             return json.JSONEncoder.default(self,
-                                            obj)  # default, if not Delivery object. Caller's problem if this is not serialziable.
+                                            obj)  # default, if not Delivery
+            # object. Caller's problem if this is not serialziable.
 
     app = connexion.App(__name__, specification_dir='./openapi/')
     app.app.json_encoder = PersonNameEncoder
