@@ -5,6 +5,7 @@ from flask_testing import TestCase
 
 from openapi_server.encoder import JSONEncoder
 
+
 class BaseTestCase(TestCase):
 
     def create_app(self):

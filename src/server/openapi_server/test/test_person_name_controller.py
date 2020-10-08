@@ -11,6 +11,7 @@ from openapi_server.models.person_name_annotation import \
     PersonNameAnnotation  # noqa: E501
 from openapi_server.test import BaseTestCase
 
+
 class TestPersonNameController(BaseTestCase):
     """PersonNameController integration test stubs"""
 
@@ -37,6 +38,7 @@ class TestPersonNameController(BaseTestCase):
             content_type='application/json')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
+
 
 if __name__ == '__main__':
     unittest.main()

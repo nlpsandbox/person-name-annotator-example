@@ -3,6 +3,7 @@ import six
 
 from openapi_server.models.base_model_ import Model
 
+
 class JSONEncoder(FlaskJSONEncoder):
     include_nulls = False
 
