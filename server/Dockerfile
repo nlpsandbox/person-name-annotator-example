@@ -1,4 +1,5 @@
 FROM python:3.8.5-slim-buster
+
 RUN apt-get update -qq -y \
     && apt-get install --no-install-recommends -qq -y \
         curl \
