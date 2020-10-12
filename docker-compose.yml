@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: src/server
+      dockerfile: Dockerfile
+    container_name: person-name-annotator
+    ports:
+      - "8080:8080"
