@@ -1,5 +1,10 @@
 FROM python:3.8.5-slim-buster
 
+# Safer bash scripts with 'set -euxo pipefail'
+SHELL ["/bin/bash", "-euxo", "pipefail", "-c"]
+
+# Install dependencies
+# hadolint ignore=DL3008
 RUN apt-get update -qq -y \
     && apt-get install --no-install-recommends -qq -y \
         curl \

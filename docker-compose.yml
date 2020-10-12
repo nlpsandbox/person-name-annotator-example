@@ -6,6 +6,6 @@ services:
     build:
       context: server
       dockerfile: Dockerfile
-    container_name: person-name-annotator-example
+    container_name: person-name-annotator
     ports:
       - "8080:8080"
