@@ -1,9 +1,11 @@
 version: "3.8"
+
 services:
-  api:
+  person-name-annotator:
+    image: nlpsandbox/person-name-annotator-example:latest
     build:
-      context: src/server
+      context: server
       dockerfile: Dockerfile
-    container_name: person-name-annotator
+    container_name: person-name-annotator-example
     ports:
       - "8080:8080"
