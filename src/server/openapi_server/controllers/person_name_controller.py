@@ -58,7 +58,7 @@ def person_names_read_all(note=None):  # noqa: E501
             match = re.finditer(
                 match,
                 note[0]._text)
-            add_match(counter, match, note, return_list )
+            add_match(counter, match, note, return_list)
 
         for m in return_list:
             logging.info(f" text set to : {m.text}")
@@ -66,17 +66,18 @@ def person_names_read_all(note=None):  # noqa: E501
     return return_list
 
 
-def add_match(counter, match, note, returnList ):
+def add_match(counter, match, note, returnList):
     if match is not None:
         for m in match:
             logging.info(f"Date : {m[0]} found at {m.start()}")
-            da = PersonNameAnnotation(  id=counter, created_by="Person Date Annotation Example",
-                                created_at=gkdate.today(),
-                                )
+            da = PersonNameAnnotation(id=counter,
+                                      created_by="Person Date Annotation "
+                                                 "Example",
+                                      created_at=gkdate.today(),
+                                      )
             da.text = m[0]
             da.note_id = note[0].id
             da.start = m.start()
             returnList.append(da)
     else:
         logging.warn(f"No Person found")
-
