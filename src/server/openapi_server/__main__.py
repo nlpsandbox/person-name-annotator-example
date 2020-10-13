@@ -2,10 +2,8 @@
 import json
 
 import connexion
-import spacy
 
 from openapi_server.models import PersonNameAnnotation
-from openapi_server.utility.configuration import Config
 from logging.config import dictConfig
 from openapi_server import encoder
 
@@ -36,12 +34,12 @@ def main():
             if isinstance(obj, PersonNameAnnotation):
                 text = obj.text  # From Parent Class, out of the box
                 # connexion only returns fields on the child class
-                created_date_str = obj.created_at.strftime("%y%m%d")
+                created_date_str = obj.created_at.strftime("%Y%m%d")
                 note_id = obj.note_id
                 start = obj.start
                 return {'id': obj.id, 'note_id': note_id,
                         'createdBy': obj.created_by, 'text': text,
-                        'created_at': created_date_str, "start": start}
+                        'createdAt': created_date_str, "start": start}
 
             return json.JSONEncoder.default(self,
                                             obj)  # default, if not Delivery
@@ -53,7 +51,6 @@ def main():
                 arguments={'title': 'NLP Sandbox Person Name Annotator API'},
                 pythonic_params=True)
 
-    Config.nlp
     app.run(port=8080)
 
 

@@ -1,16 +1,12 @@
 import logging
-from datetime import date
-from flask import jsonify
+import re
+from datetime import date as gkdate
+
 import connexion
-import spacy
-import json
-import datetime
-from pprint import pprint
 
 from openapi_server.models.note import Note
 from openapi_server.models.person_name_annotation import \
     PersonNameAnnotation  # noqa: E501
-from openapi_server.utility.configuration import Config
 
 
 def person_names_read_all(note=None):  # noqa: E501
@@ -23,7 +19,28 @@ def person_names_read_all(note=None):  # noqa: E501
 
     :rtype: List[PersonNameAnnotation]
     """
-    nlp = Config.nlp
+    person_dict = [
+        'Ferdinand Houston',
+        'Lindsey Cooper',
+        'Juliette Ingram',
+        'Elbert Hutchinson',
+        'Preston Ibarra',
+        'Elisabeth Mccall',
+        'Moses Valentine',
+        'Gilda Sheppard',
+        'Marcos Wyatt',
+        'Alicia Reed',
+        'Matt Oconnell',
+        'Ida Li',
+        'Gertrude Dennis',
+        'Daron Pittman',
+        'Tory Carroll',
+        'Wilton Andrade',
+        'Nathan Crane',
+        'Elizabeth Mahoney',
+        'Gaston Johns',
+        'Isabelle Page'
+    ]
     logging.info(f"NOTE TEXT: started")
     found = False
     counter = 1
@@ -35,18 +52,13 @@ def person_names_read_all(note=None):  # noqa: E501
         note_text = note[0]._text
         note_id = note[0]._id
         logging.info(f"NOTE TEXT: {note_text}")
-        nlp = spacy.load('en_core_web_md')
-        doc = nlp(note_text)
-        for sent in doc.sents:
-            for entity in sent.ents:
-                logging.info(
-                    f"ENTITY found {entity} with label {entity.label_}")
-                if entity.label_ == 'PERSON':
-                    logging.info(f"{entity.text}  {entity.start_char} ")
-                    return_list = add_match(counter, entity, note, return_list,
-                                            note_id)
-                    counter += 1
-                    # logging.info(f"PRETTY : { pprint(return_list)}")
+
+        for name in person_dict:
+            match = f"{name}"
+            match = re.finditer(
+                match,
+                note[0]._text)
+            add_match(counter, match, note, return_list )
 
         for m in return_list:
             logging.info(f" text set to : {m.text}")
@@ -54,18 +66,17 @@ def person_names_read_all(note=None):  # noqa: E501
     return return_list
 
 
-def add_match(counter, entity, note, returnList, note_id):
-    if entity is not None:
-        logging.info(f"Entity : {entity.text} found at {entity.start_char} ")
-        da = PersonNameAnnotation(id=counter,
-                                  created_by="Person Data Annotation Example",
-                                  created_at=date.today())
-        # Set on Parent Class
-        da.note_id = note_id
-        da.text = entity.text
-        da.start = entity.start_char
-        returnList.append(da)
+def add_match(counter, match, note, returnList ):
+    if match is not None:
+        for m in match:
+            logging.info(f"Date : {m[0]} found at {m.start()}")
+            da = PersonNameAnnotation(  id=counter, created_by="Person Date Annotation Example",
+                                created_at=gkdate.today(),
+                                )
+            da.text = m[0]
+            da.note_id = note[0].id
+            da.start = m.start()
+            returnList.append(da)
     else:
-        logging.info(f"No Entity found")
+        logging.warn(f"No Person found")
 
-    return returnList

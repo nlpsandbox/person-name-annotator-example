@@ -130,13 +130,13 @@ components:
       example:
         id: 1
         filename: 260-01.xml
-        text: October 3, Ms Chloe Price met with...
+        text: On October 3, Ms Elisabeth Mccall met with Dr Daron Pittman.
         type: pathology
         patientPublicId: "123-1223-12232"
       properties:
         text:
           description: The content of the note
-          example: October 3, Ms Chloe Price met with...
+          example: On October 3, Ms Elisabeth Mccall met with Dr Daron Pittman.
           type: string
         patientPublicId:
           allOf:

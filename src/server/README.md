@@ -15,7 +15,6 @@ To run the server, please execute the following from the root directory:
 
 ```
 pip3 install -r requirements.txt
-python3 -m spacy download en_core_web_md
 python3 -m openapi_server
 ```
 
