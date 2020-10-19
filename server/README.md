@@ -15,15 +15,8 @@ To run the server, please execute the following from the root directory:
 
 ```
 pip3 install -r requirements.txt
-python3 -m spacy download en_core_web_md
 python3 -m openapi_server
 ```
-
-one can optionally set these ENV variables:
-
-export FLASK_ENV=development
-export FLASK_PORT=8080
-
 
 and open your browser to here:
 
@@ -49,9 +42,8 @@ To run the server on a Docker container, please execute the following from the r
 
 ```bash
 # building the image
-docker_compose  build  
+docker build -t openapi_server .
 
 # starting up a container
-docker_compose up
-
+docker run -p 8080:8080 openapi_server
 ```
