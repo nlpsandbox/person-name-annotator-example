@@ -1,16 +1,13 @@
 import connexion
-import six
-import csv
 import pandas as pd
 import re
 
 from openapi_server.models.error import Error  # noqa: E501
 from openapi_server.models.note import Note  # noqa: E501
 from openapi_server.models.text_person_name_annotations import TextPersonNameAnnotations  # noqa: E501
-from openapi_server import util
 
 # Get dictionary of top 1000 last names from census.gov (18-10-2020)
-# Source: https://www.census.gov/topics/population/genealogy/data/2000_surnames.html
+# https://www.census.gov/topics/population/genealogy/data/2000_surnames.html
 lastnames_df = pd.read_csv("data/census_gov_top_1000_lastnames.csv")
 lastnames = lastnames_df['name'].str.lower().unique().tolist()
 
