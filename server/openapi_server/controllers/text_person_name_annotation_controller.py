@@ -9,8 +9,7 @@ from openapi_server.models.text_person_name_annotations import TextPersonNameAnn
 
 class Data:
     def __init__(self):
-        # All first names (1974 to 2019)
-        # https://www.nrscotland.gov.uk
+        # All first names (1974 to 2019) from https://www.nrscotland.gov.uk
         firstnames_df = pd.read_csv("data/firstnames.csv")
         self._firstnames = firstnames_df['firstname'].str.lower().unique().tolist()  # noqa: E501
 
