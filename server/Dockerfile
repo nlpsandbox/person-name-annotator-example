@@ -18,6 +18,7 @@ RUN apt-get update -qq -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy server files
+COPY data ${APP_DIR}/data
 COPY openapi_server ${APP_DIR}/openapi_server
 COPY requirements.txt app.ini ${APP_DIR}/
 COPY docker-entrypoint.sh /

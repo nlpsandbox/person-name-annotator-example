@@ -20,19 +20,32 @@ def create_text_person_name_annotations(note=None):  # noqa: E501
     res = None
     status = None
 
-    # Get dictionary of top 1000 last names from census.gov (18-10-2020)
+    # All first names - 1974 to 2019
+    # https://www.nrscotland.gov.uk
+    firstnames_df = pd.read_csv("data/firstnames.csv")
+    firstnames = firstnames_df['firstname'].str.lower().unique().tolist()
+
+    # Top 1000 last names from census.gov (18-10-2020)
     # https://www.census.gov/topics/population/genealogy/data/2000_surnames.html
-    # TODO cache data instead of reading again for each call
-    lastnames_df = pd.read_csv("data/census_gov_top_1000_lastnames.csv")
-    lastnames = lastnames_df['name'].str.lower().unique().tolist()
+    lastnames_df = pd.read_csv("data/lastnames.csv")
+    lastnames = lastnames_df['lastname'].str.lower().unique().tolist()
 
     if connexion.request.is_json:
         try:
             note = Note.from_dict(connexion.request.get_json())  # noqa: E501
-
             annotations = []
+            for name in firstnames:
+                matches = re.finditer(
+                    r'\b({})\b'.format(name), note._text, re.IGNORECASE)
+                for match in matches:
+                    annotations.append({
+                        'start': match.start(),
+                        'length': len(match[0]),
+                        'text':  match[0]
+                    })
             for name in lastnames:
-                matches = re.finditer(name, note._text, re.IGNORECASE)
+                matches = re.finditer(
+                    r'\b({})\b'.format(name), note._text, re.IGNORECASE)
                 for match in matches:
                     annotations.append({
                         'start': match.start(),
