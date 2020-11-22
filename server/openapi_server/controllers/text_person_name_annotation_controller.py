@@ -6,11 +6,6 @@ from openapi_server.models.error import Error  # noqa: E501
 from openapi_server.models.note import Note  # noqa: E501
 from openapi_server.models.text_person_name_annotations import TextPersonNameAnnotations  # noqa: E501
 
-# Get dictionary of top 1000 last names from census.gov (18-10-2020)
-# https://www.census.gov/topics/population/genealogy/data/2000_surnames.html
-lastnames_df = pd.read_csv("data/census_gov_top_1000_lastnames.csv")
-lastnames = lastnames_df['name'].str.lower().unique().tolist()
-
 
 def create_text_person_name_annotations(note=None):  # noqa: E501
     """Annotate person names in a clinical note
@@ -24,6 +19,12 @@ def create_text_person_name_annotations(note=None):  # noqa: E501
     """
     res = None
     status = None
+
+    # Get dictionary of top 1000 last names from census.gov (18-10-2020)
+    # https://www.census.gov/topics/population/genealogy/data/2000_surnames.html
+    # TODO cache data instead of reading again for each call
+    lastnames_df = pd.read_csv("data/census_gov_top_1000_lastnames.csv")
+    lastnames = lastnames_df['name'].str.lower().unique().tolist()
 
     if connexion.request.is_json:
         try:
