@@ -9,12 +9,11 @@ An example implementation of the [NLP Sandbox Person Name Annotator].
 
 ## Specification
 
-- TBA
 - Implements the [NLP Sandbox Person Name Annotator OpenAPI specification]
+- Annotates person names in clinical notes using a dictionary of first and last
+  names
 
-## More
-
-TBA
+## TBA
 
 <!-- Definitions -->
 
