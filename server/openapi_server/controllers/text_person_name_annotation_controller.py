@@ -3,7 +3,6 @@ import pandas as pd
 import re
 
 from openapi_server.models.error import Error  # noqa: E501
-from openapi_server.models.note import Note  # noqa: E501
 from openapi_server.models.text_person_name_annotation_request import TextPersonNameAnnotationRequest  # noqa: E501
 from openapi_server.models.text_person_name_annotation import TextPersonNameAnnotation  # noqa: E501
 from openapi_server.models.text_person_name_annotations import TextPersonNameAnnotations  # noqa: E501
