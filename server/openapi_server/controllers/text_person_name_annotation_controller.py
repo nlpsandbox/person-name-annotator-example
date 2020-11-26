@@ -3,7 +3,8 @@ import pandas as pd
 import re
 
 from openapi_server.models.error import Error  # noqa: E501
-from openapi_server.models.note import Note  # noqa: E501
+from openapi_server.models.text_person_name_annotation_request import TextPersonNameAnnotationRequest  # noqa: E501
+from openapi_server.models.text_person_name_annotation import TextPersonNameAnnotation  # noqa: E501
 from openapi_server.models.text_person_name_annotations import TextPersonNameAnnotations  # noqa: E501
 
 
@@ -36,26 +37,29 @@ def create_text_person_name_annotations(note=None):  # noqa: E501
     status = None
     if connexion.request.is_json:
         try:
-            note = Note.from_dict(connexion.request.get_json())  # noqa: E501
+            annotation_request = TextPersonNameAnnotationRequest.from_dict(connexion.request.get_json())  # noqa: E501
+            note = annotation_request._note  # noqa: E501
             annotations = []
             for name in data._firstnames:
                 matches = re.finditer(
                     r'\b({})\b'.format(name), note._text, re.IGNORECASE)
                 for match in matches:
-                    annotations.append({
-                        'start': match.start(),
-                        'length': len(match[0]),
-                        'text':  match[0]
-                    })
+                    annotations.append(TextPersonNameAnnotation(
+                        start=match.start(),
+                        length=len(match[0]),
+                        text=match[0],
+                        confidence=95
+                    ))
             for name in data._lastnames:
                 matches = re.finditer(
                     r'\b({})\b'.format(name), note._text, re.IGNORECASE)
                 for match in matches:
-                    annotations.append({
-                        'start': match.start(),
-                        'length': len(match[0]),
-                        'text':  match[0]
-                    })
+                    annotations.append(TextPersonNameAnnotation(
+                        start=match.start(),
+                        length=len(match[0]),
+                        text=match[0],
+                        confidence=95
+                    ))
 
             res = TextPersonNameAnnotations(annotations)
             status = 200

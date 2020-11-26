@@ -13,10 +13,10 @@ openapi_server/models/note.py
 openapi_server/models/service.py
 openapi_server/models/text_annotation.py
 openapi_server/models/text_person_name_annotation.py
+openapi_server/models/text_person_name_annotation_request.py
 openapi_server/models/text_person_name_annotations.py
 openapi_server/openapi/openapi.yaml
 openapi_server/test/__init__.py
-openapi_server/test/test_service_controller.py
 openapi_server/test/test_text_person_name_annotation_controller.py
 openapi_server/typing_utils.py
 openapi_server/util.py
