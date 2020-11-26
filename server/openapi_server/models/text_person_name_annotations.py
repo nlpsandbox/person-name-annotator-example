@@ -17,21 +17,21 @@ class TextPersonNameAnnotations(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, text_date_annotations=None):  # noqa: E501
+    def __init__(self, text_person_name_annotations=None):  # noqa: E501
         """TextPersonNameAnnotations - a model defined in OpenAPI
 
-        :param text_date_annotations: The text_date_annotations of this TextPersonNameAnnotations.  # noqa: E501
-        :type text_date_annotations: List[TextPersonNameAnnotation]
+        :param text_person_name_annotations: The text_person_name_annotations of this TextPersonNameAnnotations.  # noqa: E501
+        :type text_person_name_annotations: List[TextPersonNameAnnotation]
         """
         self.openapi_types = {
-            'text_date_annotations': List[TextPersonNameAnnotation]
+            'text_person_name_annotations': List[TextPersonNameAnnotation]
         }
 
         self.attribute_map = {
-            'text_date_annotations': 'textDateAnnotations'
+            'text_person_name_annotations': 'textPersonNameAnnotations'
         }
 
-        self._text_date_annotations = text_date_annotations
+        self._text_person_name_annotations = text_person_name_annotations
 
     @classmethod
     def from_dict(cls, dikt) -> 'TextPersonNameAnnotations':
@@ -45,24 +45,24 @@ class TextPersonNameAnnotations(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def text_date_annotations(self):
-        """Gets the text_date_annotations of this TextPersonNameAnnotations.
+    def text_person_name_annotations(self):
+        """Gets the text_person_name_annotations of this TextPersonNameAnnotations.
 
         A list of text person name annotations  # noqa: E501
 
-        :return: The text_date_annotations of this TextPersonNameAnnotations.
+        :return: The text_person_name_annotations of this TextPersonNameAnnotations.
         :rtype: List[TextPersonNameAnnotation]
         """
-        return self._text_date_annotations
+        return self._text_person_name_annotations
 
-    @text_date_annotations.setter
-    def text_date_annotations(self, text_date_annotations):
-        """Sets the text_date_annotations of this TextPersonNameAnnotations.
+    @text_person_name_annotations.setter
+    def text_person_name_annotations(self, text_person_name_annotations):
+        """Sets the text_person_name_annotations of this TextPersonNameAnnotations.
 
         A list of text person name annotations  # noqa: E501
 
-        :param text_date_annotations: The text_date_annotations of this TextPersonNameAnnotations.
-        :type text_date_annotations: List[TextPersonNameAnnotation]
+        :param text_person_name_annotations: The text_person_name_annotations of this TextPersonNameAnnotations.
+        :type text_person_name_annotations: List[TextPersonNameAnnotation]
         """
 
-        self._text_date_annotations = text_date_annotations
+        self._text_person_name_annotations = text_person_name_annotations
