@@ -12,7 +12,7 @@ def service():  # noqa: E501
     service = Service(
         name="person-name-annotator-example",
         version="0.2.3",
-        license="Apache-2.0",
+        license="apache-2.0",
         repository="github:nlpsandbox/person-name-annotator-example",
         description="An example implementation of the NLP Sandbox " +
                     "Person Name Annotator API",
