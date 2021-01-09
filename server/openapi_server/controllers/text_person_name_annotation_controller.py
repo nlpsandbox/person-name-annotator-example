@@ -20,6 +20,7 @@ class Data:
         names = firstnames_df['firstname'].append(lastnames_df['lastname'])
         self._names = names.str.lower().unique().tolist()
 
+
 data = Data()
 
 
