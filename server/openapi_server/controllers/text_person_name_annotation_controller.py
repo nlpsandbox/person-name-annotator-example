@@ -29,9 +29,6 @@ def create_text_person_name_annotations():  # noqa: E501
 
     Return the person name annotations found in a clinical note # noqa: E501
 
-    :param text_person_name_annotation_request:
-    :type text_person_name_annotation_request: dict | bytes
-
     :rtype: TextPersonNameAnnotations
     """
     res = None
