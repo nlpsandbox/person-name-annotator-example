@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   person-name-annotator:
-    image: nlpsandbox/person-name-annotator-example:0.3.1
+    image: nlpsandbox/person-name-annotator-example:0.3.2
     build:
       context: server
       dockerfile: Dockerfile
@@ -12,5 +12,28 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - nlp-sandbox-internal
+
+  nginx:
+    image: nginx:1.19.6-alpine
+    container_name: person-name-annotator-nginx
+    restart: always
+    environment:
+      - SERVER_HOST=person-name-annotator
+      - SERVER_PORT=8080
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/templates:/etc/nginx/templates:ro
+    networks:
+      - nlp-sandbox
+      - nlp-sandbox-internal
     ports:
-      - "8080:8080"
+      - "80:80"
+    depends_on:
+      - person-name-annotator
+
+networks:
+  nlp-sandbox:
+  nlp-sandbox-internal:
+    internal: true
