@@ -1,4 +1,5 @@
 from openapi_server.models.service import Service  # noqa: E501
+from openapi_server.models.license import License
 
 
 def service():  # noqa: E501
@@ -12,7 +13,7 @@ def service():  # noqa: E501
     service = Service(
         name="person-name-annotator-example",
         version="0.2.3",
-        license="apache-2.0",
+        license=License.APACHE_2_0,
         repository="github:nlpsandbox/person-name-annotator-example",
         description="An example implementation of the NLP Sandbox " +
                     "Person Name Annotator API",
@@ -20,5 +21,4 @@ def service():  # noqa: E501
         author_email="thomas.schaffter@sagebionetworks.org",
         url="https://github.com/nlpsandbox/person-name-annotator-example"
     )
-
     return service, 200
