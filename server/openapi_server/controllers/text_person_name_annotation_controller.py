@@ -10,7 +10,7 @@ from openapi_server.models.text_person_name_annotations import TextPersonNameAnn
 
 class Data:
     def __init__(self):
-        # All first names (1974 to 2019) from https://www.nrscotland.gov.uk
+        # First names
         # https://www.usna.edu/Users/cs/roche/courses/s15si335/proj1/files.php%3Ff=names.txt.html
         firstnames_df = pd.read_csv("data/firstnames.csv")
         # Top 1000 last names from census.gov (18-10-2020)
