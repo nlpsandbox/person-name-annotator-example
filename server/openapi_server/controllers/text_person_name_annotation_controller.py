@@ -48,7 +48,7 @@ def create_text_person_name_annotations():  # noqa: E501
                             start=match.start(),
                             length=len(match[0]),
                             text=match[0],
-                            confidence=95
+                            confidence=95.5
                         ))
             res = TextPersonNameAnnotations(annotations)
             status = 200
