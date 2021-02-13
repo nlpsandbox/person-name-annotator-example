@@ -62,5 +62,7 @@ class TextPersonNameAnnotationRequest(Model):
         :param note: The note of this TextPersonNameAnnotationRequest.
         :type note: Note
         """
+        if note is None:
+            raise ValueError("Invalid value for `note`, must not be `None`")  # noqa: E501
 
         self._note = note
