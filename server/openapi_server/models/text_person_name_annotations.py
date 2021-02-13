@@ -64,5 +64,7 @@ class TextPersonNameAnnotations(Model):
         :param text_person_name_annotations: The text_person_name_annotations of this TextPersonNameAnnotations.
         :type text_person_name_annotations: List[TextPersonNameAnnotation]
         """
+        if text_person_name_annotations is None:
+            raise ValueError("Invalid value for `text_person_name_annotations`, must not be `None`")  # noqa: E501
 
         self._text_person_name_annotations = text_person_name_annotations
