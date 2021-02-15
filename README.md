@@ -249,7 +249,6 @@ Thinking about contributing to this project? Get started by reading our
 [nlpsandbox/person-name-annotator-example]: https://hub.docker.com/r/nlpsandbox/person-name-annotator-example
 [GitHub template]: https://github.com/nlpsandbox/person-name-annotator-example/generate
 [NLP Sandbox]: nlpsandbox.io
-[nlpsandbox/person-name-annotator-example-java]: https://github.com/nlpsandbox/person-name-annotator-example-java
 [Apache License 2.0]: https://github.com/nlpsandbox/person-name-annotator-example/blob/develop/LICENSE
 [Patient schema]: https://github.com/nlpsandbox/nlpsandbox-schemas/blob/develop/openapi/commons/components/schemas/Patient.yaml
 [nlpsandbox/nlpsandbox-schemas]: https://github.com/nlpsandbox/nlpsandbox-schemas
