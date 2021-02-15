@@ -6,7 +6,13 @@ info:
     url: https://nlpsandbox.io
   description: |
     # Overview
-    This NLP tool detects references of person names in the clinical note given as input and returns a list of person name annotations.
+
+    This NLP tool detects references of person names in the clinical note given
+    as input and returns a list of person name annotations.
+
+    # Examples
+
+    - [NLP Sandbox Person Name Annotator (Python)](https://github.com/nlpsandbox/person-name-annotator-example)
   license:
     name: Apache 2.0
     url: https://github.com/nlpsandbox/nlpsandbox-schemas/blob/develop/LICENSE
@@ -67,7 +73,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TextPersonNameAnnotations'
+                $ref: '#/components/schemas/TextPersonNameAnnotationResponse'
           description: Success
         "400":
           content:
@@ -247,7 +253,7 @@ components:
       - text
       type: object
     TextPersonNameAnnotationRequest:
-      description: An annotation request
+      description: A request to annotate person names in a clinical note
       example:
         note:
           identifier: awesome-note
@@ -298,8 +304,8 @@ components:
         text: Chloe Price
         confidence: 95.5
       type: object
-    TextPersonNameAnnotations:
-      description: A list of text person name annotations
+    TextPersonNameAnnotationResponse:
+      description: The response to a person names annotation request
       example:
         textPersonNameAnnotations:
         - start: 42
@@ -312,7 +318,7 @@ components:
           confidence: 95.5
       properties:
         textPersonNameAnnotations:
-          description: A list of text person name annotations
+          description: A list of person name annotations
           items:
             $ref: '#/components/schemas/TextPersonNameAnnotation'
           type: array
