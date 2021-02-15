@@ -58,7 +58,7 @@ Install and start the Person Name Annotator.
 
     cd server/
     pip install -r requirements.txt
-    cd server && python -m openapi_server
+    python -m openapi_server
 
 ### Accessing the UI
 
@@ -86,8 +86,6 @@ This step will depend on your preferred programming language-framework.
 
 - If you develop in Python-Flask, create a new repository from this [GitHub
   template].
-- If you develop in Java-Spring, create a new repository from the GitHub
-  template [nlpsandbox/person-name-annotator-example-java].
 
 If you prefer to develop using another language or if you want to learn how this
 repository has been generated, go to the section [Creating a new Person Name
@@ -190,8 +188,7 @@ when a new release of the Person Name Annotator specification is available:
        curl -fO https://nlpsandbox.github.io/nlpsandbox-schemas/person-name-annotator/latest/openapi.yaml
 
 3. Re-run the OpenAPI generator using the same command that you have used to
-   generated the initial server stub. If you are using Python, you can use the
-   following command that we have defined in *package.json*.
+   generated the initial server stub.
 
        npm run generate:server openapi.yaml
 
