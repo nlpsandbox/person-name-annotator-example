@@ -19,8 +19,8 @@ found in the clinical note.
 
 ### Specification
 
-- Person Name Annotator API version: 1.0.1
-- Tool version: 1.0.1
+- Person Name Annotator API version: 1.0.2
+- Tool version: 1.0.2
 - Docker image: [nlpsandbox/person-name-annotator-example]
 
 ## Model
