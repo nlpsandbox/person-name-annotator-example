@@ -1,7 +1,7 @@
 # NLP Sandbox Person Name Annotator Example
 
 [![GitHub Release](https://img.shields.io/github/release/nlpsandbox/person-name-annotator-example.svg?include_prereleases&color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/person-name-annotator-example/releases)
-[![GitHub CI](https://img.shields.io/github/workflow/status/nlpsandbox/person-name-annotator-example/ci.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/person-name-annotator-example/actions)
+[![GitHub CI](https://img.shields.io/github/workflow/status/nlpsandbox/person-name-annotator-example/CI.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/person-name-annotator-example/actions)
 [![GitHub License](https://img.shields.io/github/license/nlpsandbox/person-name-annotator-example.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/person-name-annotator-example/blob/develop/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/nlpsandbox/person-name-annotator-example.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=pulls&logo=docker)](https://hub.docker.com/r/nlpsandbox/person-name-annotator-example)
 [![Discord](https://img.shields.io/discord/770484164393828373.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=Discord&logo=discord)](https://nlpsandbox.io/discord "Realtime support / chat with the community and the team")
@@ -19,8 +19,8 @@ found in the clinical note.
 
 ### Specification
 
-- Person Name Annotator API version: 1.0.2
-- Tool version: 1.0.2
+- Person Name Annotator API version: 1.1.0
+- Tool version: 1.1.0
 - Docker image: [nlpsandbox/person-name-annotator-example]
 
 ## Model
@@ -52,13 +52,13 @@ You can stop the container run with `Ctrl+C`, followed by `docker-compose down`.
 We recommend using a Conda environment to install and run the Person Name
 Annotator.
 
-    conda create --name person-name-annotator python=3.9.1
+    conda create --name person-name-annotator python=3.9.4
     conda activate person-name-annotator
 
 Install and start the Person Name Annotator.
 
     cd server/
-    pip install -e .
+    pip install -r requirements.txt
     python -m openapi_server
 
 ### Accessing the UI
