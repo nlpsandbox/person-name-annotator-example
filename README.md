@@ -236,7 +236,7 @@ its performance on public and private datasets.
 ## Contributing
 
 Thinking about contributing to this project? Get started by reading our
-[Contributor Guide](CONTRIBUTING.md).
+[Contributor Guide].
 
 ## License
 
@@ -255,3 +255,4 @@ Thinking about contributing to this project? Get started by reading our
 [nlpsandbox/nlpsandbox-schemas]: https://github.com/nlpsandbox/nlpsandbox-schemas
 [semantic versioning]: https://semver.org/
 [OpenAPITools/openapi-generator]: https://github.com/OpenAPITools/openapi-generator
+[Contributor Guide]: CONTRIBUTING.md
