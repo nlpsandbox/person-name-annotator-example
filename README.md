@@ -131,10 +131,10 @@ also available in Java in the GitHub repository
 Depending on the language-frameworks you want to develop with:
 
 - Python-Flask: create a new repository from this [this GitHub template].
-- Java-Spring: create a new repository from the GitHub repository
-  [nlpsandbox/person-name-annotator-example-java].
 - Other languages-frameworks: create a brand-new GitHub repository before
-  generating a NLP Sandbox tool stub in section [XXX].
+  generating a NLP Sandbox tool stub in section [Generating a new NLP Sandbox
+  tool using
+  openapi-generator](#Generating-a-new-NLP-Sandbox-tool-using-openapi-generator).
 
 You can also use a different code repository hosting service like [GitLab] and
 [Bitbucket].
