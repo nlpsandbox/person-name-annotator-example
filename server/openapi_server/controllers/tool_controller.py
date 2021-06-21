@@ -14,7 +14,7 @@ def get_tool():  # noqa: E501
     """
     tool = Tool(
         name="person-name-annotator-example",
-        version="1.1.2",
+        version="1.2.0",
         license=License.APACHE_2_0,
         repository="github:nlpsandbox/person-name-annotator-example",
         description="Example implementation of the NLP Sandbox Person " +
@@ -23,7 +23,7 @@ def get_tool():  # noqa: E501
         author_email="team@nlpsandbox.io",
         url="https://github.com/nlpsandbox/person-name-annotator-example",
         type=ToolType.PERSON_NAME_ANNOTATOR,
-        api_version="1.1.2"
+        api_version="1.2.0"
     )
     return tool, 200
 
