@@ -1,5 +1,6 @@
 from openapi_server.models.tool import Tool  # noqa: E501
 from openapi_server.models.tool_dependencies import ToolDependencies  # noqa: E501
+from openapi_server.models.tool_type import ToolType
 from openapi_server.models.license import License
 
 
@@ -21,7 +22,7 @@ def get_tool():  # noqa: E501
         author="NLP Sandbox Team",
         author_email="team@nlpsandbox.io",
         url="https://github.com/nlpsandbox/person-name-annotator-example",
-        type="nlpsandbox:person-name-annotator",
+        type=ToolType.PERSON_NAME_ANNOTATOR,
         api_version="1.1.2"
     )
     return tool, 200
