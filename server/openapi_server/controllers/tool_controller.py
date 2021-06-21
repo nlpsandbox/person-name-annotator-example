@@ -18,7 +18,7 @@ def get_tool():  # noqa: E501
         license=License.APACHE_2_0,
         repository="github:nlpsandbox/person-name-annotator-example",
         description="Example implementation of the NLP Sandbox Person " +
-                    "Name Annotator",
+                    "Name Annotator API",
         author="NLP Sandbox Team",
         author_email="team@nlpsandbox.io",
         url="https://github.com/nlpsandbox/person-name-annotator-example",
